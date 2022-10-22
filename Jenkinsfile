@@ -1,14 +1,14 @@
 node {
     stage ("Checkout AuthService"){
-        git branch: 'main', url: ' https://github.com/foxwas/bahmsdfox-msdauthservice'
+        git branch: 'main', url: 'https://github.com/foxwas/sept26-bah-mcc-auth.git'
     }
     
     stage ("Gradle Build - AuthService") {
-        bat 'gradle clean build'
+        sh 'gradle clean build'
     }
     
     stage ("Gradle Bootjar-Package - AuthService") {
-        bat 'gradle bootjar'
+        sh 'gradle bootjar'
     }
     
     stage('User Acceptance Test - AuthService') {
@@ -20,8 +20,8 @@ node {
 	  if(response=="Yes") {
 	  
 	    stage('Release - AuthService') {
-	      bat 'gradle build -x test'
-	      bat 'echo AuthService is ready to release!'
+	      sh 'gradle build -x test'
+	      sh 'echo AuthService is ready to release!'
 	    }
 	  }
     }
