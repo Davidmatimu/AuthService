@@ -8,7 +8,7 @@ node {
     }
     
     stage ("Gradle Bootjar-Package - AuthService") {
-        sh 'gradle bootjar'
+        sh 'gradle bootJar'
     }
     
     stage('User Acceptance Test - AuthService') {
