@@ -7,7 +7,7 @@ node {
         sh 'gradle clean build'
     }
     
-    stage ("Gradle Bootjar-Package - AuthService") {
+    stage ("Gradle BootJar-Package - AuthService") {
         sh 'gradle bootJar'
     }
     
