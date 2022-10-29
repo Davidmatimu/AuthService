@@ -33,7 +33,7 @@ node {
 	  if(response=="Yes") {
 	    stage('Deploy to Kubenetes cluster - AuthApi') {
 	      sh "kubectl create deployment event-auth --image=event-auth:v1.0"
-		 //get the value of API_HOST from kubernetes services and set the env variabl
+		 //get the value of API_HOST from kubernetes services and set the env variable
 	      sh "set env deployment/event-auth API_HOST=\$(kubectl get service/event-data -o jsonpath='{.spec.clusterIP}'):8080"
 	      sh "kubectl expose deployment event-auth --type=LoadBalancer --port=8081"
 	    }
