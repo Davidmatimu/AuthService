@@ -1,6 +1,6 @@
 node {
     stage ("Checkout AuthApi"){
-        git branch: 'main', url: ' https://github.com/foxwas/sept26-bah-mcc-auth.git'
+        git branch: 'main', url: ' https://github.com/Davidmatimu/AuthService.git'
     }
     
     stage ("Gradle Build - AuthApi") {
